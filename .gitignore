@@ -1,3 +1,5 @@
-./obj/*
-./bin/*
-./mod/*
+/obj/*
+/bin/*
+/mod/*
+*.o
+*.mod
