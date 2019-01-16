@@ -19,10 +19,10 @@ module mod_environment
      double precision :: mu = .0d0
   contains
      procedure :: set_temperature => grandCanonical_set_temperature
-     procedure ::set_chemPotential => grandCanonical_set_chemPotential
+     procedure :: set_chemPotential => grandCanonical_set_chemPotential
 
      procedure :: show_temperature => grandCanonical_show_temperature
-     procedure ::show_chemPotential => grandCanonical_show_chemPotential
+     procedure :: show_chemPotential => grandCanonical_show_chemPotential
   end type environment_grandCanonical
 
   type environment
@@ -57,40 +57,40 @@ contains
   end function init_environment
 
   subroutine canonical_set_temperature(self, beta)
-    class(environment_canonical) self
+    class(environment_canonical) :: self
     double precision beta
 
     self%beta = beta
   end subroutine canonical_set_temperature
 
   subroutine canonical_show_temperature(self)
-    class(environment_canonical) self
+    class(environment_canonical) :: self
 
     write(0, *) self%beta
   end subroutine canonical_show_temperature
 
   subroutine grandCanonical_set_temperature(self, beta)
-    class(environment_grandCanonical) self
+    class(environment_grandCanonical) :: self
     double precision beta
 
     self%beta = beta
   end subroutine grandCanonical_set_temperature
   
   subroutine grandCanonical_set_chemPotential(self, mu)
-    class(environment_grandCanonical) self
+    class(environment_grandCanonical) :: self
     double precision mu
 
     self%mu = mu
   end subroutine grandCanonical_set_chemPotential
 
   subroutine grandCanonical_show_temperature(self)
-    class(environment_grandCanonical) self
+    class(environment_grandCanonical) :: self
 
     write(0, *) self%beta
   end subroutine grandCanonical_show_temperature
 
   subroutine grandCanonical_show_chemPotential(self)
-    class(environment_grandCanonical) self
+    class(environment_grandCanonical) :: self
 
     write(0, *) self%mu
   end subroutine grandCanonical_show_chemPotential
