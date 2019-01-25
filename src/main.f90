@@ -11,8 +11,14 @@ program main
   double precision :: beta = .0d0
   
   myenvironment = environment()
+  mymodel = model()
+  mysimulation = simulation()
 
-  read(*, *) beta
+  ! paramter input
+  read(*, *) t, u, mu
+
+  call mymodel%phase_set_hopping(t)
+
   call myenvironment%canonical%set_temperature(beta)
   call myenvironment%canonical%show_temperature()
 end program main

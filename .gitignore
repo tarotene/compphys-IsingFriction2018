@@ -1,6 +1,10 @@
 /obj/*
 /bin/*
 /mod/*
+/note/*
 /test/*
 *.o
 *.mod
+
+!/note/main.tex
+!/note/main.pdf
